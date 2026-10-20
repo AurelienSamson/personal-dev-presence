@@ -122,11 +122,39 @@
   color: transparent;
 }
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
-@utility bg-grid {
+/* halo lumineux : halos colorés en accents langages, pas de grille */
+@utility bg-aurora {
   background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(ellipse 60% 55% at 15% 0%, color-mix(in oklab, var(--lang-typescript) 32%, transparent) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 50% at 85% 6%, color-mix(in oklab, var(--lang-react) 26%, transparent) 0%, transparent 70%),
+    radial-gradient(ellipse 75% 60% at 50% 106%, color-mix(in oklab, var(--lang-node) 24%, transparent) 0%, transparent 70%);
+  background-repeat: no-repeat;
+}
+@utility bg-aurora-soft {
+  background-image:
+    radial-gradient(ellipse 55% 65% at 6% 100%, color-mix(in oklab, var(--lang-css) 20%, transparent) 0%, transparent 72%),
+    radial-gradient(ellipse 50% 60% at 96% 0%, color-mix(in oklab, var(--lang-html) 16%, transparent) 0%, transparent 72%);
+  background-repeat: no-repeat;
+}
+@utility aurora-drift {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -15% -10%;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 40% 40% at 30% 40%, color-mix(in oklab, var(--primary) 22%, transparent) 0%, transparent 70%),
+      radial-gradient(ellipse 35% 35% at 72% 60%, color-mix(in oklab, var(--primary-glow) 16%, transparent) 0%, transparent 70%);
+    filter: blur(48px);
+    animation: aurora-drift 22s ease-in-out infinite alternate;
+  }
+}
+@keyframes aurora-drift {
+  0% { transform: translate3d(-6%, -3%, 0) scale(1); }
+  100% { transform: translate3d(8%, 5%, 0) scale(1.12); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-drift::after { animation: none; }
 }
 @utility caret {
   &::after {

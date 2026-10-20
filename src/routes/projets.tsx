@@ -52,7 +52,8 @@ const projects = [
 
 function Projets() {
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
+      <div className="bg-aurora-soft pointer-events-none absolute inset-0 -z-10" />
       <SiteHeader />
       <section className="mx-auto max-w-6xl px-6 py-20">
         <p className="font-mono text-sm text-primary">$ git log --oneline --projets</p>
