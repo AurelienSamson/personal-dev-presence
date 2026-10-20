@@ -38,7 +38,7 @@ function Index() {
 
       <section className="relative overflow-hidden border-b">
         <div className="bg-grid absolute inset-0 opacity-40" />
-        <div className="relative mx-auto max-w-3xl px-6 py-28 md:py-36">
+        <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
           <div>
             <p className="font-mono text-sm text-primary">$ whoami</p>
             <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
@@ -49,10 +49,10 @@ function Index() {
             <p className="caret mt-6 font-mono text-lg text-muted-foreground md:text-xl">
               Développeur web · TypeScript & React
             </p>
-            <p className="mt-6 max-w-lg text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-lg text-muted-foreground">
               J'écris des applications web de bout en bout : TypeScript, React, HTML, CSS et Node.js.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link
                 to="/projets"
                 className="rounded-md bg-primary px-6 py-3 font-mono text-sm font-semibold text-primary-foreground shadow-glow transition hover:bg-primary-glow"
