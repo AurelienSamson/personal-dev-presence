@@ -22,7 +22,7 @@ export type Language = {
   snippet: Token[][];
 };
 
-export const languages: Language[] = [
+export const languages: [Language, ...Language[]] = [
   {
     id: "python",
     name: "Python",
