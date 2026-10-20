@@ -8,12 +8,12 @@ export const Route = createFileRoute("/projets")({
       { title: "Projets — Aurélien Samson" },
       {
         name: "description",
-        content: "Fresque chronologique des projets d'Aurélien Samson, développeur en langages de haut niveau.",
+        content: "Fresque chronologique des projets web d'Aurélien Samson, développeur TypeScript & React.",
       },
       { property: "og:title", content: "Projets — Aurélien Samson" },
       {
         property: "og:description",
-        content: "Des projets écrits en Python, TypeScript, Ruby, Go et SQL.",
+        content: "Des projets écrits en TypeScript, React, Node.js, HTML et CSS.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,25 +28,25 @@ const projects = [
     year: "2026",
     title: "Projet à venir",
     desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["Python", "SQL"],
+    tags: ["TypeScript", "React"],
   },
   {
     year: "2025",
     title: "Projet à venir",
     desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["TypeScript", "Ruby"],
+    tags: ["Node.js", "PostgreSQL"],
   },
   {
     year: "2024",
     title: "Projet à venir",
     desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["Go", "SQL"],
+    tags: ["React", "CSS"],
   },
   {
     year: "2023",
     title: "Projet à venir",
     desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["TypeScript", "Python"],
+    tags: ["TypeScript", "Node.js"],
   },
 ];
 
@@ -60,8 +60,8 @@ function Projets() {
           Fresque <span className="text-gradient">chronologique</span>
         </h1>
         <p className="mt-6 max-w-xl font-mono text-sm text-muted-foreground">
-          Tous écrits en langages de haut niveau : pas de pointeurs, pas d'allocation manuelle, pas de compilation de
-          noyau. Juste du code qui tourne.
+          Tous écrits en langages web de haut niveau : du navigateur au serveur, un seul écosystème. Juste du code qui
+          tourne.
         </p>
 
         <ol className="relative mt-20">
