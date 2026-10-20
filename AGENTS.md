@@ -9,5 +9,6 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Language samples live as token data in `src/data/languages.ts` and are rendered by `src/components/CodeWindow.tsx`; add or edit a language there rather than hardcoding code blocks in a page, so the hero, the skills bars and the project tags stay in sync.
-- Visual identity is a dark code-editor theme driven by `--syntax-*` and `--lang-*` tokens in `src/styles.css`; use those semantic tokens instead of raw colors so every surface keeps the same palette.
+- The language list lives in `src/data/languages.ts`; the hero strip, the skills bars and the project tags all read from it, so add or edit a language there rather than hardcoding one in a page.
+- Visual identity is a dark theme driven by the `--lang-*` language accents and the shadcn theme tokens in `src/styles.css`; use those semantic tokens instead of raw colors so every surface keeps the same palette.
+- Navigation labels are plain French words (Accueil, Projets) with no file-extension or shell-prompt styling in the header.
