@@ -37,7 +37,7 @@ function Index() {
       <SiteHeader />
 
       <section className="relative overflow-hidden border-b">
-        <div className="bg-grid absolute inset-0 opacity-40" />
+        <div className="bg-aurora aurora-drift absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
           <div>
             <p className="font-mono text-sm text-primary">$ whoami</p>
@@ -82,7 +82,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-grid border-t">
+      <section className="bg-aurora-soft border-t">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-2">
           <div>
             <h2 className="font-mono text-sm text-primary">// à propos</h2>
