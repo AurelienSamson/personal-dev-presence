@@ -48,12 +48,12 @@
   --color-syntax-type: var(--syntax-type);
   --color-syntax-plain: var(--syntax-plain);
 
-  /* langages de haut niveau */
-  --color-lang-python: var(--lang-python);
+  /* langages web */
   --color-lang-typescript: var(--lang-typescript);
-  --color-lang-ruby: var(--lang-ruby);
-  --color-lang-go: var(--lang-go);
-  --color-lang-sql: var(--lang-sql);
+  --color-lang-react: var(--lang-react);
+  --color-lang-html: var(--lang-html);
+  --color-lang-css: var(--lang-css);
+  --color-lang-node: var(--lang-node);
 }
 
 :root {
@@ -97,12 +97,12 @@
   --syntax-type: oklch(0.86 0.13 95);
   --syntax-plain: oklch(0.88 0.02 220);
 
-  /* langages de haut niveau */
-  --lang-python: oklch(0.7 0.13 250);
-  --lang-typescript: oklch(0.63 0.16 258);
-  --lang-ruby: oklch(0.63 0.2 22);
-  --lang-go: oklch(0.76 0.13 215);
-  --lang-sql: oklch(0.78 0.15 75);
+  /* langages web */
+  --lang-typescript: oklch(0.68 0.14 255);
+  --lang-react: oklch(0.82 0.12 205);
+  --lang-html: oklch(0.7 0.17 55);
+  --lang-css: oklch(0.66 0.15 262);
+  --lang-node: oklch(0.75 0.14 145);
 }
 
 @layer base {
