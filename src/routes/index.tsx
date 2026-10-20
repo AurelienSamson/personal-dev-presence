@@ -6,16 +6,16 @@ import { languages, langVar } from "@/data/languages";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Aurélien Samson — Développeur en langages de haut niveau" },
+      { title: "Aurélien Samson — Développeur web" },
       {
         name: "description",
         content:
-          "Portfolio d'Aurélien Samson, développeur en langages de haut niveau : Python, TypeScript, Ruby, Go et SQL.",
+          "Portfolio d'Aurélien Samson, développeur web : TypeScript, React, HTML, CSS et Node.js.",
       },
-      { property: "og:title", content: "Aurélien Samson — Développeur en langages de haut niveau" },
+      { property: "og:title", content: "Aurélien Samson — Développeur web" },
       {
         property: "og:description",
-        content: "Python, TypeScript, Ruby, Go, SQL. La machine gère la mémoire, moi je m'occupe du produit.",
+        content: "TypeScript, React, HTML, CSS, Node.js. Du navigateur au serveur, un seul écosystème.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -24,11 +24,11 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const tools = ["Git", "Docker", "pytest", "Vitest", "PostgreSQL", "REST", "GraphQL", "CI/CD"];
+const tools = ["Git", "Docker", "Vitest", "Playwright", "Vite", "PostgreSQL", "REST", "GraphQL"];
 
 const principles = [
   { title: "lisibilité d'abord", body: "Le code est lu cent fois, écrit une fois. Une ligne claire vaut dix astuces." },
-  { title: "abstraction mesurée", body: "Je laisse la mémoire, le typage et la compilation au langage, pas à moi." },
+  { title: "le framework fait le travail", body: "Je laisse les détails d'implémentation au langage et au framework, moi je m'occupe du produit." },
   { title: "livrer petit", body: "Une fonction testée, mise en ligne, vaut mieux qu'un chef-d'œuvre en attente." },
 ];
 
@@ -48,11 +48,10 @@ function Index() {
               <span className="text-gradient">Samson</span>
             </h1>
             <p className="caret mt-6 font-mono text-lg text-muted-foreground md:text-xl">
-              Développeur · langages de haut niveau
+              Développeur web · TypeScript & React
             </p>
             <p className="mt-6 max-w-md text-muted-foreground">
-              J'écris le moins de lignes possible, dans des langages qui pensent à la mémoire pour moi : Python,
-              TypeScript, Ruby, Go, SQL.
+              J'écris des applications web de bout en bout : TypeScript, React, HTML, CSS et Node.js.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
@@ -80,7 +79,7 @@ function Index() {
                 <span className="text-[var(--lang)]">{l.name}</span>
               </li>
             ))}
-            <li className="ml-auto text-muted-foreground/70">zéro pointeur, zéro free()</li>
+            <li className="ml-auto text-muted-foreground/70">un seul langage, du navigateur au serveur</li>
           </ul>
         </div>
       </section>
@@ -90,8 +89,8 @@ function Index() {
           <div>
             <h2 className="font-mono text-sm text-primary">// à propos</h2>
             <p className="mt-4 text-2xl leading-relaxed">
-              Je conçois des applications web et des outils en langages de haut niveau : la machine gère la mémoire et
-              les types, moi je m'occupe du produit.
+              Je conçois des applications web et des outils : React et TypeScript côté interface, Node.js côté API, HTML
+              et CSS pour une mise en page soignée.
             </p>
             <ul className="mt-8 space-y-3 font-mono text-sm text-muted-foreground">
               <li>→ des interfaces et des API écrites dans le même langage</li>
