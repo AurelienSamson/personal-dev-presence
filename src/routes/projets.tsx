@@ -1,13 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
+import { langIdFor, langVar } from "@/data/languages";
 
 export const Route = createFileRoute("/projets")({
   head: () => ({
     meta: [
       { title: "Projets — Aurélien Samson" },
-      { name: "description", content: "Fresque chronologique des projets d'Aurélien Samson, développeur." },
+      {
+        name: "description",
+        content: "Fresque chronologique des projets d'Aurélien Samson, développeur en langages de haut niveau.",
+      },
       { property: "og:title", content: "Projets — Aurélien Samson" },
-      { property: "og:description", content: "Fresque chronologique des projets d'Aurélien Samson." },
+      {
+        property: "og:description",
+        content: "Des projets écrits en Python, TypeScript, Ruby, Go et SQL.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -17,10 +24,30 @@ export const Route = createFileRoute("/projets")({
 
 // Projets d'exemple — à remplacer
 const projects = [
-  { year: "2026", title: "Projet à venir", desc: "Description courte du projet, objectifs et résultat.", tags: ["React", "TypeScript"] },
-  { year: "2025", title: "Projet à venir", desc: "Description courte du projet, objectifs et résultat.", tags: ["Node.js", "SQL"] },
-  { year: "2024", title: "Projet à venir", desc: "Description courte du projet, objectifs et résultat.", tags: ["Docker"] },
-  { year: "2023", title: "Projet à venir", desc: "Description courte du projet, objectifs et résultat.", tags: ["JavaScript"] },
+  {
+    year: "2026",
+    title: "Projet à venir",
+    desc: "Description courte du projet, objectifs et résultat.",
+    tags: ["Python", "SQL"],
+  },
+  {
+    year: "2025",
+    title: "Projet à venir",
+    desc: "Description courte du projet, objectifs et résultat.",
+    tags: ["TypeScript", "Ruby"],
+  },
+  {
+    year: "2024",
+    title: "Projet à venir",
+    desc: "Description courte du projet, objectifs et résultat.",
+    tags: ["Go", "SQL"],
+  },
+  {
+    year: "2023",
+    title: "Projet à venir",
+    desc: "Description courte du projet, objectifs et résultat.",
+    tags: ["TypeScript", "Python"],
+  },
 ];
 
 function Projets() {
@@ -28,8 +55,14 @@ function Projets() {
     <div className="min-h-screen">
       <SiteHeader />
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="font-mono text-sm text-primary">$ git log --projets</p>
-        <h1 className="mt-4 text-4xl font-bold md:text-6xl">Fresque <span className="text-gradient">chronologique</span></h1>
+        <p className="font-mono text-sm text-primary">$ git log --oneline --projets</p>
+        <h1 className="mt-4 text-4xl font-bold md:text-6xl">
+          Fresque <span className="text-gradient">chronologique</span>
+        </h1>
+        <p className="mt-6 max-w-xl font-mono text-sm text-muted-foreground">
+          Tous écrits en langages de haut niveau : pas de pointeurs, pas d'allocation manuelle, pas de compilation de
+          noyau. Juste du code qui tourne.
+        </p>
 
         <ol className="relative mt-20">
           <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-primary via-primary/40 to-transparent md:left-1/2" />
@@ -44,9 +77,21 @@ function Projets() {
                     <h3 className="text-lg font-bold">{p.title}</h3>
                     <p className="mt-2 text-muted-foreground">{p.desc}</p>
                     <ul className={`mt-4 flex flex-wrap gap-2 ${left ? "md:justify-end" : ""}`}>
-                      {p.tags.map((t) => (
-                        <li key={t} className="rounded bg-secondary px-2 py-1 font-mono text-xs text-accent-foreground">{t}</li>
-                      ))}
+                      {p.tags.map((t) => {
+                        const id = langIdFor(t);
+                        return (
+                          <li
+                            key={t}
+                            style={id ? langVar(id) : undefined}
+                            className={
+                              "rounded border px-2 py-1 font-mono text-xs " +
+                              (id ? "border-border text-[var(--lang)]" : "bg-secondary text-accent-foreground")
+                            }
+                          >
+                            {t}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>

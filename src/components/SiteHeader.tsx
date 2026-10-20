@@ -5,7 +5,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link to="/" className="font-mono text-sm font-bold text-primary">~/aurelien</Link>
+        <Link to="/" className="font-mono text-sm font-bold text-primary">~/aurelien.py</Link>
         <div className="flex gap-6">
           <Link to="/" className={link} activeProps={{ className: "text-primary" }} activeOptions={{ exact: true }}>./profil</Link>
           <Link to="/projets" className={link} activeProps={{ className: "text-primary" }}>./projets</Link>

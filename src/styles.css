@@ -31,11 +31,34 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  /* éditeur */
+  --color-editor: var(--editor);
+  --color-editor-foreground: var(--editor-foreground);
+  --color-dot-close: var(--dot-close);
+  --color-dot-min: var(--dot-min);
+  --color-dot-max: var(--dot-max);
+
+  /* coloration syntaxique */
+  --color-syntax-keyword: var(--syntax-keyword);
+  --color-syntax-string: var(--syntax-string);
+  --color-syntax-fn: var(--syntax-fn);
+  --color-syntax-comment: var(--syntax-comment);
+  --color-syntax-number: var(--syntax-number);
+  --color-syntax-type: var(--syntax-type);
+  --color-syntax-plain: var(--syntax-plain);
+
+  /* langages de haut niveau */
+  --color-lang-python: var(--lang-python);
+  --color-lang-typescript: var(--lang-typescript);
+  --color-lang-ruby: var(--lang-ruby);
+  --color-lang-go: var(--lang-go);
+  --color-lang-sql: var(--lang-sql);
 }
 
 :root {
   --radius: 0.375rem;
-  --background: oklch(0.2 0.035 250);
+  --background: oklch(0.19 0.03 258);
   --foreground: oklch(0.95 0.02 170);
   --card: oklch(0.24 0.04 250);
   --card-foreground: oklch(0.95 0.02 170);
@@ -57,6 +80,29 @@
   --ring: oklch(0.78 0.14 172);
   --gradient-primary: linear-gradient(120deg, var(--primary), var(--primary-glow));
   --shadow-glow: 0 0 40px -8px color-mix(in oklab, var(--primary) 60%, transparent);
+
+  /* éditeur */
+  --editor: oklch(0.155 0.03 258);
+  --editor-foreground: oklch(0.88 0.02 220);
+  --dot-close: oklch(0.66 0.19 20);
+  --dot-min: oklch(0.8 0.15 85);
+  --dot-max: oklch(0.75 0.16 150);
+
+  /* coloration syntaxique */
+  --syntax-keyword: oklch(0.76 0.19 330);
+  --syntax-string: oklch(0.83 0.15 145);
+  --syntax-fn: oklch(0.79 0.13 235);
+  --syntax-comment: oklch(0.6 0.03 250);
+  --syntax-number: oklch(0.8 0.15 65);
+  --syntax-type: oklch(0.86 0.13 95);
+  --syntax-plain: oklch(0.88 0.02 220);
+
+  /* langages de haut niveau */
+  --lang-python: oklch(0.7 0.13 250);
+  --lang-typescript: oklch(0.63 0.16 258);
+  --lang-ruby: oklch(0.63 0.2 22);
+  --lang-go: oklch(0.76 0.13 215);
+  --lang-sql: oklch(0.78 0.15 75);
 }
 
 @layer base {
