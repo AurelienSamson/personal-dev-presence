@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import { ContactLinks } from "@/components/ContactLinks";
+import { ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { languages, langVar } from "@/data/languages";
 
@@ -40,31 +43,21 @@ function Index() {
         <div className="bg-aurora aurora-drift absolute inset-0" />
         <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:py-36">
           <div>
-            <p className="font-mono text-sm text-primary">$ whoami</p>
-            <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+            <p className="text-sm text-primary">Développement web</p>
+            <h1 className="mt-4 text-5xl font-bold md:text-7xl">
               Aurélien
               <br />
               <span className="text-gradient">Samson</span>
             </h1>
-            <p className="caret mt-6 font-mono text-lg text-muted-foreground md:text-xl">
+            <p className="mt-6 text-lg text-muted-foreground md:text-xl">
               Développeur web · TypeScript & React
             </p>
             <p className="mx-auto mt-6 max-w-lg text-muted-foreground">
               J'écris des applications web de bout en bout : TypeScript, React, HTML, CSS et Node.js.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Link
-                to="/projets"
-                className="rounded-md bg-primary px-6 py-3 font-mono text-sm font-semibold text-primary-foreground shadow-glow transition hover:bg-primary-glow"
-              >
-                voir mes projets →
-              </Link>
-              <a
-                href="mailto:contact@example.com"
-                className="rounded-md border px-6 py-3 font-mono text-sm text-foreground transition hover:border-primary hover:text-primary"
-              >
-                me contacter
-              </a>
+              <Button asChild size="lg"><Link to="/projets">Voir mes projets <ArrowRight /></Link></Button>
+              <ContactLinks />
             </div>
           </div>
         </div>
@@ -85,36 +78,20 @@ function Index() {
       <section className="bg-aurora-soft border-t">
         <div className="mx-auto grid max-w-6xl gap-14 px-6 py-24 md:grid-cols-2">
           <div>
-            <h2 className="font-mono text-sm text-primary">// à propos</h2>
+            <h2 className="text-sm font-semibold text-primary">À propos</h2>
             <p className="mt-4 text-2xl leading-relaxed">
-              Je conçois des applications web et des outils : React et TypeScript côté interface, Node.js côté API, HTML
-              et CSS pour une mise en page soignée.
+              Je conçois des applications web : React et TypeScript côté interface, Node.js côté API, HTML et CSS pour une mise en page soignée.
             </p>
-            <ul className="mt-8 space-y-3 font-mono text-sm text-muted-foreground">
-              <li>→ des interfaces et des API écrites dans le même langage</li>
-              <li>→ des scripts qui remplacent une journée de manuel</li>
-              <li>→ des requêtes lisibles avant d'être rapides</li>
-            </ul>
+            <Button asChild variant="link" className="mt-6 px-0"><Link to="/a-propos">Mon approche <ArrowRight /></Link></Button>
           </div>
           <div>
-            <h2 className="font-mono text-sm text-primary">// langages</h2>
+            <h2 className="font-mono text-sm text-primary">Technologies</h2>
             <ul className="mt-6 space-y-5">
               {languages.map((l) => (
                 <li key={l.id} style={langVar(l.id)}>
-                  <div className="flex items-baseline justify-between gap-4 font-mono text-sm">
-                    <span className="text-[var(--lang)]">{l.name}</span>
-                    <span className="text-xs text-muted-foreground">{l.note}</span>
-                  </div>
-                  <div className="mt-2 flex gap-1.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span
-                        key={i}
-                        className={
-                          "h-1.5 flex-1 rounded-full " +
-                          (i < l.level ? "bg-[var(--lang)]" : "bg-muted")
-                        }
-                      />
-                    ))}
+                  <div className="border-b border-border pb-4">
+                    <h3 className="text-base text-[var(--lang)]">{l.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{l.note}</p>
                   </div>
                 </li>
               ))}
@@ -125,7 +102,7 @@ function Index() {
 
       <section className="border-t">
         <div className="mx-auto max-w-6xl px-6 py-24">
-          <h2 className="font-mono text-sm text-primary">// principes</h2>
+          <h2 className="font-mono text-sm text-primary">Principes</h2>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {principles.map((pr) => (
               <div key={pr.title} className="rounded-lg border bg-card p-6 transition hover:border-primary hover:shadow-glow">
@@ -134,7 +111,7 @@ function Index() {
               </div>
             ))}
           </div>
-          <h2 className="mt-16 font-mono text-sm text-primary">// outillage</h2>
+          <h2 className="mt-16 font-mono text-sm text-primary">Outillage</h2>
           <ul className="mt-6 flex flex-wrap gap-3">
             {tools.map((s) => (
               <li key={s} className="rounded-md border bg-card px-4 py-2 font-mono text-sm">

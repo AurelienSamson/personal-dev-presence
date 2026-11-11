@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "projet-2026",
+    "year": "2026",
+    "title": "Projet à venir",
+    "desc": "Description courte du projet, objectifs et résultat.",
+    "tags": ["TypeScript", "React"],
+    "context": "Le contexte et les besoins de ce projet seront présentés ici.",
+    "approach": "Les choix techniques et les contributions seront détaillés ici.",
+    "result": "Les résultats et les enseignements seront ajoutés avec le projet.",
+    "demoUrl": null,
+    "sourceUrl": null
+  },
+  {
+    "slug": "projet-2025",
+    "year": "2025",
+    "title": "Projet à venir",
+    "desc": "Description courte du projet, objectifs et résultat.",
+    "tags": ["Node.js", "PostgreSQL"],
+    "context": "Le contexte et les besoins de ce projet seront présentés ici.",
+    "approach": "Les choix techniques et les contributions seront détaillés ici.",
+    "result": "Les résultats et les enseignements seront ajoutés avec le projet.",
+    "demoUrl": null,
+    "sourceUrl": null
+  },
+  {
+    "slug": "projet-2024",
+    "year": "2024",
+    "title": "Projet à venir",
+    "desc": "Description courte du projet, objectifs et résultat.",
+    "tags": ["React", "CSS"],
+    "context": "Le contexte et les besoins de ce projet seront présentés ici.",
+    "approach": "Les choix techniques et les contributions seront détaillés ici.",
+    "result": "Les résultats et les enseignements seront ajoutés avec le projet.",
+    "demoUrl": null,
+    "sourceUrl": null
+  },
+  {
+    "slug": "projet-2023",
+    "year": "2023",
+    "title": "Projet à venir",
+    "desc": "Description courte du projet, objectifs et résultat.",
+    "tags": ["TypeScript", "Node.js"],
+    "context": "Le contexte et les besoins de ce projet seront présentés ici.",
+    "approach": "Les choix techniques et les contributions seront détaillés ici.",
+    "result": "Les résultats et les enseignements seront ajoutés avec le projet.",
+    "demoUrl": null,
+    "sourceUrl": null
+  }
+]

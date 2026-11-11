@@ -1,4 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import projects from "@/data/projects.json";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { langIdFor, langVar } from "@/data/languages";
 
@@ -22,43 +25,15 @@ export const Route = createFileRoute("/projets")({
   component: Projets,
 });
 
-// Projets d'exemple — à remplacer
-const projects = [
-  {
-    year: "2026",
-    title: "Projet à venir",
-    desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["TypeScript", "React"],
-  },
-  {
-    year: "2025",
-    title: "Projet à venir",
-    desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["Node.js", "PostgreSQL"],
-  },
-  {
-    year: "2024",
-    title: "Projet à venir",
-    desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["React", "CSS"],
-  },
-  {
-    year: "2023",
-    title: "Projet à venir",
-    desc: "Description courte du projet, objectifs et résultat.",
-    tags: ["TypeScript", "Node.js"],
-  },
-];
-
 function Projets() {
   return (
     <div className="relative min-h-screen">
       <div className="bg-aurora-soft pointer-events-none absolute inset-0 -z-10" />
       <SiteHeader />
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <p className="font-mono text-sm text-primary">$ git log --oneline --projets</p>
+        <p className="text-sm text-primary">Sélection de travaux</p>
         <h1 className="mt-4 text-4xl font-bold md:text-6xl">
-          Fresque <span className="text-gradient">chronologique</span>
+          Mes <span className="text-gradient">projets</span>
         </h1>
         <p className="mt-6 max-w-xl font-mono text-sm text-muted-foreground">
           Tous écrits en langages web de haut niveau : du navigateur au serveur, un seul écosystème. Juste du code qui
@@ -70,7 +45,7 @@ function Projets() {
           {projects.map((p, i) => {
             const left = i % 2 === 0;
             return (
-              <li key={i} className="relative mb-16 pl-12 md:grid md:grid-cols-2 md:gap-16 md:pl-0">
+              <li key={p.slug} className="relative mb-16 pl-12 md:grid md:grid-cols-2 md:gap-16 md:pl-0">
                 <span className="absolute left-4 top-2 h-3 w-3 -translate-x-1/2 rounded-full bg-primary shadow-glow md:left-1/2" />
                 <div className={left ? "md:text-right" : "md:col-start-2"}>
                   <span className="font-mono text-3xl font-bold text-primary">{p.year}</span>
@@ -94,6 +69,7 @@ function Projets() {
                         );
                       })}
                     </ul>
+                    <Button asChild variant="link" className="mt-4 px-0"><Link to="/projets/$slug" params={{ slug: p.slug }}>Voir le projet <ArrowRight /></Link></Button>
                   </div>
                 </div>
               </li>
