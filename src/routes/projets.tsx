@@ -35,7 +35,7 @@ function Projets() {
         <h1 className="mt-4 text-4xl font-bold md:text-6xl">
           Mes <span className="text-gradient">projets</span>
         </h1>
-        <p className="mt-6 max-w-xl font-mono text-sm text-muted-foreground">
+        <p className="mt-6 max-w-xl text-sm text-muted-foreground">
           Tous écrits en langages web de haut niveau : du navigateur au serveur, un seul écosystème. Juste du code qui
           tourne.
         </p>
@@ -60,7 +60,7 @@ function Projets() {
                             key={t}
                             style={id ? langVar(id) : undefined}
                             className={
-                              "rounded border px-2 py-1 font-mono text-xs " +
+                              "rounded border px-2 py-1 text-xs " +
                               (id ? "border-border text-[var(--lang)]" : "bg-secondary text-accent-foreground")
                             }
                           >

@@ -30,12 +30,12 @@ function ProjectDetail() {
     <SiteHeader />
     <main className="mx-auto max-w-4xl px-6 py-16">
       <Button asChild variant="link" className="px-0"><Link to="/projets"><ArrowLeft />Tous les projets</Link></Button>
-      <p className="mt-12 font-mono text-primary">{project.year}</p>
+      <p className="mt-12 text-primary">{project.year}</p>
       <h1 className="mt-4 text-4xl font-bold md:text-6xl">{project.title}</h1>
       <p className="mt-6 text-xl leading-relaxed text-muted-foreground">{project.desc}</p>
       <ul className="mt-6 flex flex-wrap gap-4">{project.tags.map(tag => {
         const id = langIdFor(tag);
-        return <li key={tag} style={id ? langVar(id) : undefined} className={id ? "font-mono text-sm text-[var(--lang)]" : "font-mono text-sm text-muted-foreground"}>{tag}</li>;
+        return <li key={tag} style={id ? langVar(id) : undefined} className={id ? "text-sm text-[var(--lang)]" : "text-sm text-muted-foreground"}>{tag}</li>;
       })}</ul>
       <div className="mt-8 flex flex-wrap gap-3">
         {project.demoUrl ? <Button asChild><a href={project.demoUrl} target="_blank" rel="noopener noreferrer">Voir le site <ArrowUpRight /></a></Button> : null}
